@@ -7,7 +7,7 @@ let myItemList = []
 function addNewItem() {
     myItemList.push({
         task: input.value,
-        complete: false
+        complete: false,
     })
 
     input.value='';
@@ -18,9 +18,10 @@ function addNewItem() {
 function showTasks() {
     let newLi = ''
     myItemList.forEach((item, position) => {
-        newLi = newLi + `
+        newLi = 
+         newLi + `
        
-        <li class="task" ${item.complete && "done"}">
+        <li class="task ${item.complete && 'done'}">
             <img src="./img/checked.png" alt="check-in-task" onclick="completeTask(${position})">
             <p>${item.task}</p>
             <img src="./img/trash.png" alt="task-for-trash" onclick="deleteItem(${position})">
@@ -38,6 +39,7 @@ function showTasks() {
 function completeTask(position){
     myItemList[position].complete = !myItemList[position].complete  //valor true e false
     showTasks();
+
 }
 
 function deleteItem(position){
